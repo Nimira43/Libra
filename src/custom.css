@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+:root {
+  --dark: #111;
+  --light: #eee;
+  --brad-sm: 3px;
+  --brad-md: 5px;
+  --brad-lg: 8px;
+  --pad-sm: 5px 10px;
+  --pad-md: 7.5px 15px;
+  --pad-lg: 10px 20px;
+  --mar-xs: 5px;
+  --mar-sm: 10px;
+  --mar-md: 15px;
+  --mar-lg: 20px;
+  --mar-xl: 25px;
+}
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark);
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 70vw;
+  height: 70vh;
+  border: 2px dotted var(--light);
+  border-radius: var(--brad-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pad-md);
+}
+
+.title {
+  margin-bottom: var(--mar-lg);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--light);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--mar-lg);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+form {
+  display: block;
+  margin-bottom: var(--mar-lg);
+}
+
+input {
+  font-size: 30px;
+  font-weight: 200;
+  background-color: transparent;
+  border: 2px dotted var(--light);
+  border-radius: var(--brad-sm);
+  padding: var(--pad-md);
+  color: var(--pad-lg);
+}
+
+button {
+  display: block;
+  margin: var(--mar-lg) auto;
+  font-size: 30px;
+  padding: var(--pad-md);
+  background-color: var(--light);
+  border: none;
+  border-radius: var(--brad-sm);
+  color: var(--dark);
+}
+

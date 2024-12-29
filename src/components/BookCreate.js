@@ -13,12 +13,12 @@ const handleSubmit = (event) => {
 }
 
   return (
-    <div className='container'>
-      <h1 className='title'>Add a book to the List</h1>
+    <div className='book-create'>
+      <h3 className='title'>Add a book to the List</h3>
       <form onSubmit={handleSubmit}>
         <label>Title</label>
-        <input value={title} onChange={handleChange} />
-        <button>Create Book</button>
+        <input className='input' value={title} onChange={handleChange} />
+        <button className='button'>Create Book</button>
       </form>
     </div>
   )

@@ -8,8 +8,7 @@ function App() {
   }
 
   return (
-    <div>
-      
+    <div>  
       <BookCreate onCreate={createBook} />
     </div>
   )

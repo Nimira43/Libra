@@ -37,7 +37,7 @@ export default function NewTransactionPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          
+          New Transaction Form
         </CardContent>
       </Card>
     </div>

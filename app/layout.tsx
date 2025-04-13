@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 
+
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={poppins.className}>
         <nav className='bg-dark p-4 text-light h-20 flex items-center justify-between'>
-          
+
         </nav>
         {children}
       </body>

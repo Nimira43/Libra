@@ -1,6 +1,10 @@
 'use client'
 
-const transactionFormSchema = 
+import { z } from 'zod'
+
+const transactionFormSchema = z.object({
+  
+})
 
 export default function TransctionForm() {
   return (

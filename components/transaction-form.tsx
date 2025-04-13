@@ -61,7 +61,7 @@ export default function TransctionForm() {
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className='bg-light'>
                       <SelectItem value='income'>
                         Income
                       </SelectItem>

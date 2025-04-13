@@ -4,7 +4,8 @@ import { addDays } from 'date-fns'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormField, FormItem } from './ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -46,12 +47,31 @@ export default function TransctionForm() {
         <FormField
           control={form.control}
           name='transactionType'
-          render={(field) => {
+          render={({ field }) => {
             return (
               <FormItem>
+                <FormLabel>
+                  Transaction Type
+                </FormLabel>
                 <FormControl>
-                  
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                  >
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value='income'>
+                        Income
+                      </SelectItem>
+                      <SelectItem value='expense'>
+                        Expense
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )
           }}

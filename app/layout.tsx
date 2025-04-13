@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-
+import { GiLibra } from 'react-icons/gi'
+import Link from 'next/link'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -23,7 +24,10 @@ export default function RootLayout({
     <html lang='en'>
       <body className={poppins.className}>
         <nav className='bg-dark p-4 text-light h-20 flex items-center justify-between'>
-
+          <Link href='/' className='logo text-grey-medium font-light text-2xl flex gap-1 items-center'>
+            <GiLibra />Libra
+          </Link>
+          
         </nav>
         {children}
       </body>

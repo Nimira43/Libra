@@ -22,6 +22,13 @@ export default function NewTransactionPage() {
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href='/dashboard/transactions/new'>
+                New
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
     </div>

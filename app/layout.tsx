@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { GiLibra } from 'react-icons/gi'
 import Link from 'next/link'
+import { ClerkProvider, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -21,16 +22,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <ClerkProvider>
+      <html lang='en'>
       <body className={poppins.className}>
         <nav className='bg-dark p-4 text-light h-20 flex items-center justify-between'>
           <Link href='/' className='logo text-grey-medium font-light text-2xl flex gap-1 items-center'>
             <GiLibra />Libra
           </Link>
-          
+          <div>
+            <SignedOut>
+              <div className='flex items-center'>
+                <SignInButton />
+                <SignUpButton />
+              </div>
+            </SignedOut>    
+          </div>
         </nav>
         {children}
       </body>
     </html>
+    </ClerkProvider>
   )
 }

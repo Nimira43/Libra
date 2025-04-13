@@ -4,6 +4,7 @@ import { addDays } from 'date-fns'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Form, FormControl, FormField, FormItem } from './ui/form'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -34,7 +35,28 @@ export default function TransctionForm() {
       transactionType: 'income'
     },
   })
+
+  const handleSubmit = async (
+    data: z.infer<typeof transactionFormSchema>
+  ) => {}
+
   return (
-    <div>TransctionForm</div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
+        <FormField
+          control={form.control}
+          name='transactionType'
+          render={(field) => {
+            return (
+              <FormItem>
+                <FormControl>
+                  
+                </FormControl>
+              </FormItem>
+            )
+          }}
+        />
+      </form>
+    </Form>
   )
 }

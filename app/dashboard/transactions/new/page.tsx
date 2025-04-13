@@ -1,3 +1,4 @@
+import TransctionForm from '@/components/transaction-form'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
@@ -37,7 +38,7 @@ export default function NewTransactionPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          New Transaction Form
+          <TransctionForm />
         </CardContent>
       </Card>
     </div>

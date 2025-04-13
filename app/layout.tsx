@@ -3,7 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { GiLibra } from 'react-icons/gi'
 import Link from 'next/link'
-import { ClerkProvider, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
+import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 
 const poppins = Poppins({
@@ -40,7 +40,10 @@ export default function RootLayout({
                   <SignUpButton />
                 </Button>
               </div>
-            </SignedOut>    
+            </SignedOut>
+            <SignedIn>
+              
+            </SignedIn>  
           </div>
         </nav>
         {children}

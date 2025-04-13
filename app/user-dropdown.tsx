@@ -4,6 +4,15 @@ import { UserButton } from '@clerk/nextjs'
 
 export default function UserDropdown() {
   return (
-    <UserButton showName />
+    <UserButton
+      showName
+      appearance={{
+        elements: {
+          userButtonOuterIdentifier: {
+            color: '#999'
+          }
+        }
+      }}
+    />
   )
 }

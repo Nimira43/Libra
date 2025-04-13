@@ -44,6 +44,9 @@ export default function TransctionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
+        <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
+
+        </fieldset>
         <FormField
           control={form.control}
           name='transactionType'

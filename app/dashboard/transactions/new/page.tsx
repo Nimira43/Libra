@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '@/components/ui/breadcrumb'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import Link from 'next/link'
 
 export default function NewTransactionPage() {
@@ -13,6 +13,15 @@ export default function NewTransactionPage() {
               </Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href='/dashboard/transactions'>
+                Transactions
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
         </BreadcrumbList>
       </Breadcrumb>
     </div>

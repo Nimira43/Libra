@@ -1,7 +1,9 @@
 'use-client'
 
+import { UserButton } from '@clerk/nextjs'
+
 export default function UserDropdown() {
   return (
-    <div>UserDropdown</div>
+    <UserButton showName />
   )
 }

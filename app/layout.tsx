@@ -5,6 +5,7 @@ import { GiLibra } from 'react-icons/gi'
 import Link from 'next/link'
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
+import UserDropdown from './user-dropdown'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -42,7 +43,7 @@ export default function RootLayout({
               </div>
             </SignedOut>
             <SignedIn>
-              
+              <UserDropdown />
             </SignedIn>  
           </div>
         </nav>

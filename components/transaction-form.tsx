@@ -45,40 +45,39 @@ export default function TransctionForm() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
-
+          <FormField
+            control={form.control}
+            name='transactionType'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>
+                    Transaction Type
+                  </FormLabel>
+                  <FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                    >
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent className='bg-light'>
+                        <SelectItem value='income'>
+                          Income
+                        </SelectItem>
+                        <SelectItem value='expense'>
+                          Expense
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
         </fieldset>
-        <FormField
-          control={form.control}
-          name='transactionType'
-          render={({ field }) => {
-            return (
-              <FormItem>
-                <FormLabel>
-                  Transaction Type
-                </FormLabel>
-                <FormControl>
-                  <Select
-                    onValueChange={field.onChange}
-                    value={field.value}
-                  >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent className='bg-light'>
-                      <SelectItem value='income'>
-                        Income
-                      </SelectItem>
-                      <SelectItem value='expense'>
-                        Expense
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )
-          }}
-        />
       </form>
     </Form>
   )

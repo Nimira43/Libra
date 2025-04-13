@@ -43,7 +43,7 @@ export default function RootLayout({
               </div>
             </SignedOut>
             <SignedIn>
-              <UserDropdown />
+              <UserDropdown/>
             </SignedIn>  
           </div>
         </nav>

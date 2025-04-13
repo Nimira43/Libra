@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Libra',
-  description: 'Cassh application using Next JS',
+  description: 'Cash application using Next JS',
 }
 
 export default function RootLayout({

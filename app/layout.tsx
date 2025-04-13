@@ -4,6 +4,7 @@ import './globals.css'
 import { GiLibra } from 'react-icons/gi'
 import Link from 'next/link'
 import { ClerkProvider, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -32,8 +33,12 @@ export default function RootLayout({
           <div>
             <SignedOut>
               <div className='flex items-center'>
-                <SignInButton />
-                <SignUpButton />
+                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-main'>
+                  <SignInButton />
+                </Button>
+                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-main'>
+                  <SignUpButton />
+                </Button>
               </div>
             </SignedOut>    
           </div>

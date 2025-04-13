@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Silkscreen:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +10,7 @@ body {
 }
 
 .logo {
-  font-family: 'Carattere', cursive;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 @layer base {

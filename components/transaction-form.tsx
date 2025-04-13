@@ -77,6 +77,33 @@ export default function TransctionForm() {
               )
             }}
           />
+          <FormField
+            control={form.control}
+            name='categoryId'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>
+                    Category
+                  </FormLabel>
+                  <FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value.toString()}
+                    >
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent className='bg-light'>
+                       
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
         </fieldset>
       </form>
     </Form>

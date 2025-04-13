@@ -1,4 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 
 export default function NewTransactionPage() {
@@ -29,6 +30,9 @@ export default function NewTransactionPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <Card className='mt-4 max-w-screen-md'>
+
+      </Card>
     </div>
   )
 }

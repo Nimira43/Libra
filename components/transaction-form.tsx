@@ -174,7 +174,7 @@ export default function TransctionForm() {
             }}
           />
         </fieldset>
-        <fieldset className='mt-5'>
+        <fieldset className='mt-5 flex flex-col gap-5'>
           <FormField
             control={form.control}
             name='description'
@@ -192,6 +192,9 @@ export default function TransctionForm() {
               )
             }}
           />
+          <Button type='submit'> 
+            Submit
+          </Button>
         </fieldset>
       </form>
     </Form>

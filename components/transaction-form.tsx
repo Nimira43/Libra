@@ -174,6 +174,25 @@ export default function TransctionForm() {
             }}
           />
         </fieldset>
+        <fieldset className='mt-5'>
+          <FormField
+            control={form.control}
+            name='description'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>
+                    Description
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field}/>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
+        </fieldset>
       </form>
     </Form>
   )

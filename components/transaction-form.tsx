@@ -123,11 +123,11 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className={cn('w-[280px] justify-start text-left font-normal', !field.value && 'text-muted-foreground'
+                          className={cn('w-[280px] border justify-start text-left font-normal', !field.value && 'text-muted-foreground'
                           )}
                         >
                           <BsCalendar3
-                            className='mr-1 h-4 w-4'
+                            className='mr-1 h-4 w-4 '
                           />
                           {field.value ? (
                             format(field.value, 'dd MMMM yyyy')

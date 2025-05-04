@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils'
 import { BsCalendar3 } from 'react-icons/bs'
 import { format } from 'date-fns'
 import { Calendar } from './ui/calendar'
+import { Input } from './ui/input'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -155,7 +156,23 @@ export default function TransctionForm() {
               )
             }}
           />
-          
+          <FormField
+            control={form.control}
+            name='amount'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>
+                    Amount
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} type='number'/>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
         </fieldset>
       </form>
     </Form>

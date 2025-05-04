@@ -123,7 +123,7 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className={cn('w-[280px] border justify-start text-left font-normal', !field.value && 'text-muted-foreground'
+                          className={cn('justify-start text-left font-normal', !field.value && 'text-muted-foreground'
                           )}
                         >
                           <BsCalendar3
@@ -142,6 +142,9 @@ export default function TransctionForm() {
                           selected={field.value}
                           onSelect={field.onChange}
                           initialFocus
+                          disabled={{
+                            after: new Date()
+                          }}
                         />
                       </PopoverContent>
                     </Popover>

@@ -91,3 +91,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Issue with Shadcn and Tailwind
+
+I think that I'm using Shadcn components tailored for Tailwind 4. I'm using Tailwind 3 here. Will start to fix this
+
+*/ 

@@ -104,6 +104,23 @@ export default function TransctionForm() {
               )
             }}
           />
+          <FormField
+            control={form.control}
+            name='transactionDate'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>
+                    Transaction Date
+                  </FormLabel>
+                  <FormControl>
+                    
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
         </fieldset>
       </form>
     </Form>

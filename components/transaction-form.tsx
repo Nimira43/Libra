@@ -123,7 +123,7 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className={cn('justify-start text-left font-normal', !field.value && 'text-muted-foreground'
+                          className={cn('w-full justify-start text-left font-normal', !field.value && 'text-muted-foreground'
                           )}
                         >
                           <BsCalendar3

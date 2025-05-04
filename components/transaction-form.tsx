@@ -120,8 +120,8 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className=(cn('w-[280px] justify-start text-left font-normal text-muted-foreground'
-                        
+                          className={cn('w-[280px] justify-start text-left font-normal', !date && 'text-muted-foreground'
+                          )}
                         >
 
                         </Button>

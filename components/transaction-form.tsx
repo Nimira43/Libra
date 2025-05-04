@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Popover, PopoverTrigger } from './ui/popover'
 import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -119,7 +120,7 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className='w-[280px] justify-start text-left font-normal text-muted-foreground'
+                          className=(cn('w-[280px] justify-start text-left font-normal text-muted-foreground'
                         
                         >
 

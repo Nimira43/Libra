@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Popover, PopoverTrigger } from './ui/popover'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
+import { BsCalendar3 } from 'react-icons/bs'
+import { format } from 'path'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -120,10 +122,17 @@ export default function TransctionForm() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          className={cn('w-[280px] justify-start text-left font-normal', !date && 'text-muted-foreground'
+                          className={cn('w-[280px] justify-start text-left font-normal', !field.value && 'text-muted-foreground'
                           )}
                         >
-
+                          <BsCalendar3
+                            className='mr-1 h-4 w-4'
+                          />
+                          {field.value ? (
+                            format(field.value, 'PPP')
+                          ) : (
+                            <span>Pick a Date</span>
+                          )}
                         </Button>
                       </PopoverTrigger>
                     </Popover>

@@ -6,6 +6,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { Popover, PopoverTrigger } from './ui/popover'
+import { Button } from './ui/button'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -114,7 +116,16 @@ export default function TransctionForm() {
                     Transaction Date
                   </FormLabel>
                   <FormControl>
-                    
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          className='w-[280px] justify-start text-left font-normal text-muted-foreground'
+                        
+                        >
+
+                        </Button>
+                      </PopoverTrigger>
+                    </Popover>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

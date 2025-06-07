@@ -74,7 +74,7 @@ export default function TransctionForm({
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className='bg-light'>
+                      <SelectContent>
                         <SelectItem value='income'>
                           Income
                         </SelectItem>
@@ -106,8 +106,15 @@ export default function TransctionForm({
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className='bg-light'>
-                       
+                      <SelectContent>
+                        {categories.map(category => (
+                          <SelectItem 
+                            key={category.id}
+                            value={category.id.toString()}
+                          >
+                            {category.name}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </FormControl>
@@ -143,7 +150,7 @@ export default function TransctionForm({
                           )}
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className='w-auto p-0 bg-light'>
+                      <PopoverContent className='w-auto p-0'>
                         <Calendar
                           mode='single'
                           selected={field.value}

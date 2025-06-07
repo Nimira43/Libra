@@ -75,7 +75,10 @@ export default function TransctionForm({
                   </FormLabel>
                   <FormControl>
                     <Select
-                      onValueChange={field.onChange}
+                      onValueChange={(newValue) => {
+                        field.onChange(newValue)
+                        form.setValue('categoryId', 0)
+                      }}  
                       value={field.value}
                     >
                       <SelectTrigger>

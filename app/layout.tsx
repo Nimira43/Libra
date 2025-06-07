@@ -27,17 +27,17 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
       <body className={poppins.className}>
-        <nav className='bg-dark p-4 text-light h-20 flex items-center justify-between'>
+        <nav className='bg-dark p-4 h-20 flex items-center justify-between'>
           <Link href='/' className='logo text-grey-medium font-light text-2xl flex gap-1 items-center'>
             <GiLibra />Libra
           </Link>
           <div>
             <SignedOut>
               <div className='flex items-center'>
-                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-main'>
+                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-light'>
                   <SignInButton />
                 </Button>
-                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-main'>
+                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-light'>
                   <SignUpButton />
                 </Button>
               </div>

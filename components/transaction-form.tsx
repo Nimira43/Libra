@@ -51,7 +51,14 @@ export default function TransctionForm({
 
   const handleSubmit = async (
     data: z.infer<typeof transactionFormSchema>
-  ) => {}
+  ) => {
+    console.log(data)
+  }
+
+  const transactionType = form.watch('transactionType')
+  const filteredCategories = categories.filter(
+    (category) => category.type === transactionType
+  )
 
   return (
     <Form {...form}>
@@ -107,7 +114,7 @@ export default function TransctionForm({
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {categories.map(category => (
+                        {filteredCategories.map(category => (
                           <SelectItem 
                             key={category.id}
                             value={category.id.toString()}

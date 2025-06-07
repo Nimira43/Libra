@@ -13,6 +13,7 @@ import { BsCalendar3 } from 'react-icons/bs'
 import { format } from 'date-fns'
 import { Calendar } from './ui/calendar'
 import { Input } from './ui/input'
+import { Category } from '@/types/Category'
 
 const transactionFormSchema = z.object({
   transactionType: z
@@ -35,11 +36,7 @@ const transactionFormSchema = z.object({
 export default function TransctionForm({
   categories
 }: {
-  categories: {
-    id: number
-    name: string
-    type: 'income' | 'expense'
-  }
+  categories: Category[]
 }) {
   const form = useForm<z.infer<typeof transactionFormSchema>>({
     resolver: zodResolver(transactionFormSchema),

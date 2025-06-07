@@ -41,7 +41,7 @@ export default async function NewTransactionPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <TransctionForm />
+          <TransctionForm categories={categories} />
         </CardContent>
       </Card>
     </div>

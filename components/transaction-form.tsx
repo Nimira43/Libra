@@ -13,7 +13,7 @@ import { BsCalendar3 } from 'react-icons/bs'
 import { format } from 'date-fns'
 import { Calendar } from './ui/calendar'
 import { Input } from './ui/input'
-import { Category } from '@/types/Category'
+import { type Category } from '@/types/Category'
 
 const transactionFormSchema = z.object({
   transactionType: z

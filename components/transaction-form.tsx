@@ -32,7 +32,15 @@ const transactionFormSchema = z.object({
     .max(300, 'Description must contain no more than 300 characters')
 })
 
-export default function TransctionForm() {
+export default function TransctionForm({
+  categories
+}: {
+  categories: {
+    id: number
+    name: string
+    type: 'income' | 'expense'
+  }
+}) {
   const form = useForm<z.infer<typeof transactionFormSchema>>({
     resolver: zodResolver(transactionFormSchema),
     defaultValues: {

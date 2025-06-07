@@ -4,4 +4,5 @@ import 'server-only'
 
 export async function getCategories() {
   const categories = await db.select().from(categoriesTable)
+  return categories
 }

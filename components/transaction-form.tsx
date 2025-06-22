@@ -15,7 +15,7 @@ import { Calendar } from './ui/calendar'
 import { Input } from './ui/input'
 import { type Category } from '@/types/Category'
 
-const transactionFormSchema = z.object({
+export const transactionFormSchema = z.object({
   transactionType: z
     .enum(['income', 'expense']),
   categoryId: z.coerce

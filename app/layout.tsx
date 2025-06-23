@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import UserDropdown from './user-dropdown'
+import { Toaster } from '@/components/ui/toaster'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -48,6 +49,7 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+        <Toaster />
       </body>
     </html>
     </ClerkProvider>

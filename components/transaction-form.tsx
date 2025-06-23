@@ -62,7 +62,10 @@ export default function TransctionForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
+        <fieldset 
+          disabled={form.formState.isSubmitting}        
+          className='grid grid-cols-2 gap-y-5 gap-x-2'
+        >
           <FormField
             control={form.control}
             name='transactionType'
@@ -195,7 +198,10 @@ export default function TransctionForm({
             }}
           />
         </fieldset>
-        <fieldset className='mt-5 flex flex-col gap-5'>
+        <fieldset 
+          disabled={form.formState.isSubmitting}
+          className='mt-5 flex flex-col gap-5'
+        >
           <FormField
             control={form.control}
             name='description'

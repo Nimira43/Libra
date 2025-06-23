@@ -27,6 +27,7 @@ export default function NewTransactionForm ({
         description: result.message
       })     
     }
+    console.log(result.id)
   }
   return (
     <TransctionForm 

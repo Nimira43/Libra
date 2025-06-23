@@ -18,6 +18,10 @@ export default function NewTransactionForm ({
       categoryId: data.categoryId,
       description: data.description
     })
+
+    if (result.error) {
+      
+    }
   }
   return (
     <TransctionForm 

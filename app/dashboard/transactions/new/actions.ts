@@ -51,5 +51,9 @@ export const createTransaction = async (data: {
     description: data.description,
     categoryId: data.categoryId,
     transactionDate: data.transactionDate
-  })
+  }).returning()
+
+  return {
+    id: transaction.id
+  }
 }

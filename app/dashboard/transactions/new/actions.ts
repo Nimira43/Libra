@@ -1,6 +1,7 @@
 'use server'
 
 import { auth } from '@clerk/nextjs/server'
+import { addDays, subYears } from 'date-fns'
 import { z } from 'zod'
 
 const transactionSchema = z.object({
@@ -10,7 +11,14 @@ const transactionSchema = z.object({
   description: z
     .string()
     .min(3, 'Description must contain at least 3 characters')
-    .max(300, 'Description must contain no more than 300 characters')
+    .max(300, 'Description must contain no more than 300 characters'),
+  categoryId: z
+    .number()
+    .positive('Category ID is invalid.'), 
+  transactionDate: z.coerce
+    .date()
+    .min(subYears(new Date(), 100))
+    .max(addDays(new Date(), 1))
 })
 
 export const createTransaction = async (data: {

@@ -24,9 +24,16 @@ export default function NewTransactionForm ({
     if (result.error) {
       toast({
         title: 'Error',
-        description: result.message
-      })     
+        description: result.message,
+        variant: 'destructive'
+      }) 
+      return;    
     }
+    toast({
+      title: 'Success',
+      description: 'Transaction Created.',
+      variant: 'destructive'
+    }) 
     console.log(result.id)
   }
   return (

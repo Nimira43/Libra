@@ -32,7 +32,7 @@ export default function NewTransactionForm ({
     toast({
       title: 'Success',
       description: 'Transaction Created.',
-      variant: 'destructive'
+      className: 'bg-green-500 text-light'   
     }) 
     console.log(result.id)
   }

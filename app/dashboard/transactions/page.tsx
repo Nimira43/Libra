@@ -1,5 +1,5 @@
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
-import { Link } from "lucide-react";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
+import Link from 'next/link'
 
 export default function TransactionsPage() {
   return (
@@ -15,16 +15,8 @@ export default function TransactionsPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href='/dashboard/transactions'>
-                Transactions
-              </Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
             <BreadcrumbPage>
-              New Transaction
+              Transactions
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>

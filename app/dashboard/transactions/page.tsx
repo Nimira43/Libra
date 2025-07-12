@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 export default function TransactionsPage() {
@@ -26,9 +27,18 @@ export default function TransactionsPage() {
         <CardHeader>
           <CardTitle className='flex justify-between'>
             <span>July 2025 Transactions</span>
-            <div></div>
+            <div>
+              Dropdowns
+            </div>
           </CardTitle>
         </CardHeader>
+        <CardContent>
+          <Button asChild>
+            <Link href='/dashboard/transactions/new'>
+              New Transaction
+            </Link>
+          </Button>
+        </CardContent>
       </Card>
     </div>
   )

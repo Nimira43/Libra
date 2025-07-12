@@ -36,7 +36,11 @@ export default function NewTransactionForm ({
       description: 'Transaction Created.',
       className: 'bg-green-500 text-light'   
     }) 
-    console.log(result.id)
+    router.push(`
+      /dashboard/transactions?month=${
+        data.transactionDate.getMonth() + 1
+      }&year=${data.transactionDate.getFullYear()}
+    `)
   }
   return (
     <TransctionForm 

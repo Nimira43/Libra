@@ -6,12 +6,14 @@ import { z } from 'zod'
 import { createTransaction } from './actions'
 import { format } from 'date-fns'
 import { useToast } from '@/hooks/use-toast'
+import { useRouter } from 'next/navigation'
 
 export default function NewTransactionForm ({
   categories
 }: {
   categories: Category[]
 }) {
+  const router = useRouter()
   const {toast} = useToast()
   const handleSubmit = async(data: z.infer<typeof transactionFormSchema>) => {
     const result = await createTransaction({

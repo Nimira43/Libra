@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function TransactionsPage() {
   return (
-    <div>
+    <div className='max-w-screen-xl mx-auto py-10'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

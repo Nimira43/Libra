@@ -29,6 +29,9 @@ export default async function TransactionsPage({
   }>
 }) {
   const searchParamsValues = await searchParams
+  const {month, year} = searchSchema.parse(searchParamsValues)
+  
+  const selectedDate = new Date(year, month - 1, 1)
 
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

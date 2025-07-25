@@ -3,7 +3,16 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
-export default function TransactionsPage() {
+export default async function TransactionsPage({
+  searchParams
+}: {
+  searchParams: Promise<{
+    year?: string
+    month?: string
+  }>
+}) {
+  const searchParamsValues = await searchParams
+
   return (
     <div className='max-w-screen-xl mx-auto py-10'>
       <Breadcrumb>

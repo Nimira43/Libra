@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { format } from 'date-fns'
 import Link from 'next/link'
 import { z } from 'zod'
 
@@ -11,13 +12,12 @@ const searchSchema = z.object({
     .number()
     .min(today.getFullYear() - 100)
     .max(today.getFullYear() + 1)
-    .catch(today.getFullYear),
+    .catch(today.getFullYear()),
   month: z.coerce
     .number()
     .min(1)
     .max(12)
     .catch(today.getMonth() + 1)
-  
 })
 
 export default async function TransactionsPage({
@@ -55,7 +55,7 @@ export default async function TransactionsPage({
       <Card className='mt-4'>
         <CardHeader>
           <CardTitle className='flex justify-between'>
-            <span>July 2025 Transactions</span>
+            <span>{format(selectedDate, 'MMMM yyyy')} Transactions</span>
             <div>
               Dropdowns
             </div>

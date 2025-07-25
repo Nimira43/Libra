@@ -4,9 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import { z } from 'zod'
 
+const today = new Date()
+
 const searchSchema = z.object({
   year: z.coerce
     .number()
+    .min(today.getFullYear() - 100)
+    .max(today.getFullYear() + 1),
+  
 })
 
 export default async function TransactionsPage({

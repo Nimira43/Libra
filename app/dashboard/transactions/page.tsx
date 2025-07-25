@@ -2,6 +2,12 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
+import { z } from 'zod'
+
+const searchSchema = z.object({
+  year: z.coerce
+    .number()
+})
 
 export default async function TransactionsPage({
   searchParams

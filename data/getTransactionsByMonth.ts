@@ -13,4 +13,6 @@ export async function getTransactionsByMonth({
   if (!userId) {
     return null
   }
+
+  const earliestDate = new Date(year, month - 1, 1)
 }

@@ -15,4 +15,5 @@ export async function getTransactionsByMonth({
   }
 
   const earliestDate = new Date(year, month - 1, 1)
+  const latestDate = new Date(year, month, 0)
 }

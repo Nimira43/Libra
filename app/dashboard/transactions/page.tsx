@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import Link from 'next/link'
 import { z } from 'zod'
 import { FiEdit2 } from 'react-icons/fi'
+import numeral from 'numeral'
 
 const today = new Date()
 

@@ -1,7 +1,7 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Table, TableHeader, TableRow } from '@/components/ui/table'
+import { Table, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getTransactionsByMonth } from '@/data/getTransactionsByMonth'
 import { format } from 'date-fns'
 import Link from 'next/link'
@@ -81,7 +81,22 @@ export default async function TransactionsPage({
             <Table className='mt-4'>
               <TableHeader>
                 <TableRow>
-
+                  <TableHead>
+                    Date
+                  </TableHead>
+                  <TableHead>
+                    Description
+                  </TableHead>
+                  <TableHead>
+                    Type
+                  </TableHead>
+                  <TableHead>
+                    Category
+                  </TableHead>
+                  <TableHead>
+                    Date
+                  </TableHead>
+                  <TableHead />
                 </TableRow>
               </TableHeader>
             </Table>

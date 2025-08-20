@@ -71,6 +71,11 @@ export default async function TransactionsPage({
               New Transaction
             </Link>
           </Button>
+          {!transactions?.length && (
+            <p className='py-10 text-center text-lg text-muted-foreground'>
+              There are no transaction for this month
+            </p>
+          )}
         </CardContent>
       </Card>
     </div>

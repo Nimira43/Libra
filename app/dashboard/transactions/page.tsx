@@ -6,6 +6,7 @@ import { getTransactionsByMonth } from '@/data/getTransactionsByMonth'
 import { format } from 'date-fns'
 import Link from 'next/link'
 import { z } from 'zod'
+import { FiEdit2 } from 'react-icons/fi'
 
 const today = new Date()
 
@@ -94,7 +95,7 @@ export default async function TransactionsPage({
                     Category
                   </TableHead>
                   <TableHead>
-                    Date
+                    Amount
                   </TableHead>
                   <TableHead />
                 </TableRow>
@@ -118,6 +119,20 @@ export default async function TransactionsPage({
                     </TableCell>
                     <TableCell>
                       {transaction.amount}
+                    </TableCell>
+                    <TableCell>
+                      <Button 
+                        asChild
+                        variant='outline'
+                        size='icon'
+                        aria-label='Edit transaction'
+                      >
+                        <Link 
+                          href={`/dashboard/transactions/${transaction.id}`} 
+                        >
+                          <FiEdit2 />
+                        </Link>
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))}

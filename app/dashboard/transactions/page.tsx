@@ -118,9 +118,9 @@ export default async function TransactionsPage({
                       {transaction.categoryId}
                     </TableCell>
                     <TableCell>
-                      {transaction.amount}
+                      £{transaction.amount}
                     </TableCell>
-                    <TableCell>
+                    <TableCell className='text-right'>
                       <Button 
                         asChild
                         variant='outline'

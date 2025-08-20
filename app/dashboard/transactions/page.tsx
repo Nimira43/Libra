@@ -107,6 +107,12 @@ export default async function TransactionsPage({
                     <TableCell>
                       {format(transaction.transactionDate,'dd MMMM yyyy')}
                     </TableCell>
+                    <TableCell>
+                      {transaction.description}
+                    </TableCell>
+                    <TableCell>
+                      {transaction.categoryId}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

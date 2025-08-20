@@ -119,7 +119,7 @@ export default async function TransactionsPage({
                       {transaction.categoryId}
                     </TableCell>
                     <TableCell>
-                      £{transaction.amount}
+                      £{numeral(transaction.amount).format('0,0[.]00')}
                     </TableCell>
                     <TableCell className='text-right'>
                       <Button 

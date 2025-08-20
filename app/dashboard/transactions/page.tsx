@@ -113,6 +113,12 @@ export default async function TransactionsPage({
                     <TableCell>
                       {transaction.categoryId}
                     </TableCell>
+                    <TableCell>
+                      {transaction.categoryId}
+                    </TableCell>
+                    <TableCell>
+                      {transaction.amount}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

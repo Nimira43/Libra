@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Table, TableHeader, TableRow } from '@/components/ui/table'
 import { getTransactionsByMonth } from '@/data/getTransactionsByMonth'
 import { format } from 'date-fns'
 import Link from 'next/link'
@@ -75,6 +76,15 @@ export default async function TransactionsPage({
             <p className='py-10 text-center text-lg text-muted-foreground'>
               There are no transaction for this month
             </p>
+          )}
+          {!!transactions?.length && (
+            <Table className='mt-4'>
+              <TableHeader>
+                <TableRow>
+
+                </TableRow>
+              </TableHeader>
+            </Table>
           )}
         </CardContent>
       </Card>

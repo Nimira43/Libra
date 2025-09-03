@@ -34,10 +34,8 @@ export default async function TransactionsPage({
 }) {
   const searchParamsValues = await searchParams
   const {month, year} = searchSchema.parse(searchParamsValues)
-  
   const selectedDate = new Date(year, month - 1, 1)
   const transactions = await getTransactionsByMonth({month, year})
-
   console.log({transactions})
 
   return (

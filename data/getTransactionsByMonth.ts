@@ -1,5 +1,5 @@
 import { db } from '@/db'
-import { transactionsTable } from '@/db/schema'
+import { categoriesTable, transactionsTable } from '@/db/schema'
 import { auth } from '@clerk/nextjs/server'
 import { format } from 'date-fns'
 import { and, desc, eq, gte, lte } from 'drizzle-orm'
@@ -36,6 +36,11 @@ export async function getTransactionsByMonth({
           format(latestDate, 'yyyy-MM-dd')
         )
       )
-    ).orderBy(desc(transactionsTable.transactionDate))
+    )
+      .orderBy(
+        desc(transactionsTable.transactionDate)
+      )
+      .leftJoin(categoriesTable, 
+        eq())
   return transactions
 }

@@ -37,10 +37,11 @@ export async function getTransactionsByMonth({
         )
       )
     )
-      .orderBy(
-        desc(transactionsTable.transactionDate)
-      )
-      .leftJoin(categoriesTable, 
-        eq())
+    .orderBy(
+      desc(transactionsTable.transactionDate)
+    )
+    .leftJoin(
+      categoriesTable, 
+      eq(transactionsTable.categoryId, categoriesTable.id))
   return transactions
 }

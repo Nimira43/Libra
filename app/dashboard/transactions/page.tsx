@@ -114,7 +114,14 @@ export default async function TransactionsPage({
                     <TableCell
                       className='uppercase'
                     >
-                      <Badge>
+                      <Badge
+                        className={
+                          transaction.transactionType === 'income'
+                            ? 'bg-green-600'
+                            : 'bg-red-600'
+
+                        }
+                      >
                         {transaction.transactionType}
                       </Badge>
                       

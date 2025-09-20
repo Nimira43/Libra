@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { z } from 'zod'
 import { FiEdit2 } from 'react-icons/fi'
 import numeral from 'numeral'
+import { Badge } from '@/components/ui/badge'
 
 const today = new Date()
 
@@ -110,8 +111,13 @@ export default async function TransactionsPage({
                     <TableCell>
                       {transaction.description}
                     </TableCell>
-                    <TableCell>
-                      {transaction.transactionType}
+                    <TableCell
+                      className='uppercase'
+                    >
+                      <Badge>
+                        {transaction.transactionType}
+                      </Badge>
+                      
                     </TableCell>
                     <TableCell>
                       {transaction.category}

@@ -9,6 +9,7 @@ import { z } from 'zod'
 import { FiEdit2 } from 'react-icons/fi'
 import numeral from 'numeral'
 import { Badge } from '@/components/ui/badge'
+import Filters from './filters'
 
 const today = new Date()
 
@@ -63,7 +64,11 @@ export default async function TransactionsPage({
           <CardTitle className='flex justify-between'>
             <span>{format(selectedDate, 'MMMM yyyy')} Transactions</span>
             <div>
-              Dropdowns
+              <Filters 
+                year={year}
+                month={month}
+                yearsRange={[]}
+              />
             </div>
           </CardTitle>
         </CardHeader>

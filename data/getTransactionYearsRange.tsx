@@ -26,7 +26,7 @@ export async function getTransactionYearsRange() {
 
   const years = Array.from({ 
     length: currentYear - earliestYear + 1
-  }).map((_, i) => currentYear - 1)
+  }).map((_, i) => currentYear - i)
 
   return years
 }

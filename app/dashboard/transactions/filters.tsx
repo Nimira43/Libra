@@ -29,7 +29,7 @@ export default function Filters({
           {Array.from({length: 12}).map((_, i) => (
             <SelectItem
               key={i}
-              value={`i + 1`}
+              value={`${i + 1}`}
             >
               {format(new Date(selectedYear, i, 1), 'MMMM')}
             </SelectItem>

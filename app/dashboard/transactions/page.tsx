@@ -71,7 +71,7 @@ export default async function TransactionsPage({
               <Filters 
                 year={year}
                 month={month}
-                yearsRange={[]}
+                yearsRange={yearsRange}
               />
             </div>
           </CardTitle>

@@ -10,6 +10,7 @@ import { FiEdit2 } from 'react-icons/fi'
 import numeral from 'numeral'
 import { Badge } from '@/components/ui/badge'
 import Filters from './filters'
+import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
 
 const today = new Date()
 
@@ -38,6 +39,9 @@ export default async function TransactionsPage({
   const {month, year} = searchSchema.parse(searchParamsValues)
   const selectedDate = new Date(year, month - 1, 1)
   const transactions = await getTransactionsByMonth({month, year})
+
+  const yearsRange = await getTransactionYearsRange()
+  
   console.log({transactions})
 
   return (

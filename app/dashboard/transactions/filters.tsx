@@ -14,7 +14,7 @@ export default function Filters({
   yearsRange: number[]
 }) {
   const [selectedMonth, setSelectedMonth] = useState(month)
-  const [selectedYear, setSelecteYear] = useState(year)
+  const [selectedYear, setSelectedYear] = useState(year)
 
   return (
     <>
@@ -32,6 +32,24 @@ export default function Filters({
               value={`${i + 1}`}
             >
               {format(new Date(selectedYear, i, 1), 'MMMM')}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+      <Select 
+        value={selectedYear.toString()}
+        onValueChange={(newValue) => setSelectedYear(Number(newValue))}
+      >
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {yearsRange.map((year) => (
+            <SelectItem
+              key={year}
+              value={`${year}`}
+            >
+              {year}
             </SelectItem>
           ))}
         </SelectContent>

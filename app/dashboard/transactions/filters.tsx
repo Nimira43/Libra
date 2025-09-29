@@ -60,7 +60,7 @@ export default function Filters({
         asChild
       >
         <Link 
-          href={`/dashboard/transactions?year=${selectedYear}@month=${selectedMonth}`}
+          href={`/dashboard/transactions?year=${selectedYear}&month=${selectedMonth}`}
         >
           Go
         </Link>

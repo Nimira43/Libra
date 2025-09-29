@@ -1,5 +1,7 @@
 'use client'
 
+import { Select, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 export default function Filters({
   year, 
   month,
@@ -10,6 +12,13 @@ export default function Filters({
   yearsRange: number[]
 }) {
   return (
-    <div>Dropdowns: {year}, {month}</div>
+    <>
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+      </Select>
+
+    </>
   )
 }

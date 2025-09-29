@@ -1,6 +1,7 @@
 'use client'
 
-import { Select, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Select, SelectContent, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react"
 
 export default function Filters({
   year, 
@@ -11,14 +12,19 @@ export default function Filters({
   month: number
   yearsRange: number[]
 }) {
+  const [selectedMonth, setSelectedMonth] = useState(month)
+  const [selectedYear, setSelecteYear] = useState(year)
+
   return (
     <>
       <Select>
         <SelectTrigger>
           <SelectValue />
         </SelectTrigger>
-      </Select>
+        <SelectContent>
 
+        </SelectContent>
+      </Select>
     </>
   )
 }

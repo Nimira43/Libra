@@ -19,6 +19,7 @@ export default function Filters({
   return (
     <>
       <Select 
+        value={selectedMonth.toString()}
         onValueChange={(newValue) => setSelectedMonth(Number(newValue))}
       >
         <SelectTrigger>

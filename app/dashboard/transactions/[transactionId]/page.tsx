@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { getCategories } from '@/data/getCategories'
 import Link from 'next/link'
 
 export default async function EditTransactionPage({
@@ -15,6 +16,8 @@ export default async function EditTransactionPage({
       <div>Transaction not found.</div>
     )
   }
+
+  const categories = await getCategories()
 
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

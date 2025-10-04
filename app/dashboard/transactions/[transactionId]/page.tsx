@@ -54,7 +54,9 @@ export default async function EditTransactionPage({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <EditTransactionForm />
+          <EditTransactionForm 
+            categories={categories}
+          />
         </CardContent>
       </Card>
     </div>

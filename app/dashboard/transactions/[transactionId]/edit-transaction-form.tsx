@@ -8,9 +8,17 @@ import { useToast } from '@/hooks/use-toast'
 import { useRouter } from 'next/navigation'
 
 export default function EditTransactionForm ({
-  categories
+  categories,
+  transaction
 }: {
   categories: Category[]
+  transaction: {
+    id: number
+    categoryId: number,
+    amount: string,
+    description: string
+    transactionDate: string
+  }
 }) {
   const router = useRouter()
   const {toast} = useToast()

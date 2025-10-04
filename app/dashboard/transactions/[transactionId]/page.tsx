@@ -38,7 +38,7 @@ export default async function EditTransactionPage({
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbPage>
-              New Transaction
+              Edit Transaction
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
@@ -46,7 +46,7 @@ export default async function EditTransactionPage({
       <Card className='mt-4 max-w-screen-md'>
         <CardHeader>
           <CardTitle>
-            New Transaction
+            Edit Transaction
           </CardTitle>
         </CardHeader>
         <CardContent>

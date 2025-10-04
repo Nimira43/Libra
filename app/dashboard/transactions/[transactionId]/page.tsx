@@ -1,3 +1,7 @@
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import Link from 'next/link'
+
 export default async function EditTransactionPage({
   params
 }: {
@@ -12,8 +16,43 @@ export default async function EditTransactionPage({
     )
   }
 
-
   return (
-    <div>Edit Transaction: {paramsValues.transactionId}</div>
+    <div className='max-w-screen-xl mx-auto py-10'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href='/dashboard'>
+                Dashboard
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href='/dashboard/transactions'>
+                Transactions
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>
+              New Transaction
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+      <Card className='mt-4 max-w-screen-md'>
+        <CardHeader>
+          <CardTitle>
+            New Transaction
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          Edit Transaction
+        </CardContent>
+      </Card>
+    </div>
   )
 }

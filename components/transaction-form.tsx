@@ -57,7 +57,8 @@ export default function TransctionForm({
       categoryId: 0,
       description: '',
       transactionDate: new Date(),
-      transactionType: 'income'
+      transactionType: 'income',
+      ...defaultValues
     },
   })
 

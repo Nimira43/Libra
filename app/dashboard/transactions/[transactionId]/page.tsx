@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import Link from 'next/link'
 import EditTransactionForm from './edit-transaction-form'
+import { getTransaction } from '@/data/getTransaction'
 
 export default async function EditTransactionPage({
   params
@@ -19,6 +20,9 @@ export default async function EditTransactionPage({
   }
 
   const categories = await getCategories()
+  const transaction = await getTransaction(transactionId)
+
+  
 
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

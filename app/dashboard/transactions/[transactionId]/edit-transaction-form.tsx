@@ -54,6 +54,15 @@ export default function EditTransactionForm ({
   }
   return (
     <TransctionForm 
+      defaultValues={{
+        amount: Number(transaction.amount),
+        categoryId: transaction.categoryId,
+        description: transaction.description,
+        transactionDate: new Date(transaction.transactionDate),
+        transactionType: 
+          categories.find(category => category.id === transaction.categoryId)
+            ?.type ?? 'income',
+      }}
       onSubmit={handleSubmit}  
       categories={categories} 
     />

@@ -60,6 +60,7 @@ export default async function EditTransactionPage({
         </CardHeader>
         <CardContent>
           <EditTransactionForm 
+            transaction={transaction}
             categories={categories}
           />
         </CardContent>

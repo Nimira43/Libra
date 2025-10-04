@@ -4,6 +4,7 @@ import { getCategories } from '@/data/getCategories'
 import Link from 'next/link'
 import EditTransactionForm from './edit-transaction-form'
 import { getTransaction } from '@/data/getTransaction'
+import { notFound } from 'next/navigation'
 
 export default async function EditTransactionPage({
   params
@@ -14,15 +15,15 @@ export default async function EditTransactionPage({
   const transactionId = Number(paramsValues.transactionId)
 
   if (isNaN(transactionId)) {
-    return (
-      <div>Transaction not found.</div>
-    )
+    notFound()
   }
 
   const categories = await getCategories()
   const transaction = await getTransaction(transactionId)
 
-  
+  if (!transaction) {
+    notFound()
+  }
 
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

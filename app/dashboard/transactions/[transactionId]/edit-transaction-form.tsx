@@ -35,7 +35,7 @@ export default function EditTransactionForm ({
     }
     toast({
       title: 'Success',
-      description: 'Transaction Created.',
+      description: 'Transaction Updated.',
       className: 'bg-green-500 text-light'   
     }) 
     router.push(`

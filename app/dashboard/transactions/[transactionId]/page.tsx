@@ -2,6 +2,7 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import Link from 'next/link'
+import EditTransactionForm from './edit-transaction-form'
 
 export default async function EditTransactionPage({
   params
@@ -53,7 +54,7 @@ export default async function EditTransactionPage({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          Edit Transaction
+          <EditTransactionForm />
         </CardContent>
       </Card>
     </div>

@@ -3,10 +3,7 @@
 import { db } from '@/db'
 import { transactionsTable } from '@/db/schema'
 import { auth } from '@clerk/nextjs/server'
-import { addDays, subYears } from 'date-fns'
-import { z } from 'zod'
-
-
+import { transactionSchema } from '@/validation/transactionSchema'
 
 export const createTransaction = async (data: {
   amount: number

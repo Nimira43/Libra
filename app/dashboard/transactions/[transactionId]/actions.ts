@@ -1,5 +1,7 @@
 'use server'
 
+import { auth } from '@clerk/nextjs/server'
+
 export async function updateTransaction({
   id,
   transactionDate,
@@ -13,5 +15,14 @@ export async function updateTransaction({
   amount: number
   categoryId: number
 }) {
+  const {userId} = await auth()
+
+  if (!userId) {
+    return (
+      error: true,
+      message: 'Unauthorised'
+    )
+  }
+
 
 }

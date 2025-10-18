@@ -1,6 +1,12 @@
 'use server'
 
+import { transactionSchema } from '@/validation/transactionSchema'
 import { auth } from '@clerk/nextjs/server'
+import { z } from 'zod'
+
+const updateTransactionSchema = transactionSchema.and(z.object({
+  id: z.number()
+}))
 
 export async function updateTransaction({
   id,
@@ -24,6 +30,6 @@ export async function updateTransaction({
     }
   }
 
-  
+
 
 }

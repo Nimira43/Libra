@@ -1,5 +1,7 @@
 'use server'
 
+import { db } from '@/db'
+import { transactionsTable } from '@/db/schema'
 import { transactionSchema } from '@/validation/transactionSchema'
 import { auth } from '@clerk/nextjs/server'
 import { z } from 'zod'
@@ -26,4 +28,17 @@ export async function updateTransaction(data: {
 
   const validation = updateTransactionSchema.safeParse(data)
 
+  if (!validation.success) {
+    return {
+      error: true,
+      message: validation.error.issues[0].message
+    }
+  }
+
+  await db.update(transactionsTable).set({
+    description: data.description,
+    amount: data.amount.toString(),
+    transactionDate: data.transactionDate,
+    categoryId: data.categoryId
+  })
 }

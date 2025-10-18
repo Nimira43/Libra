@@ -13,7 +13,7 @@ export async function updateTransaction({
   transactionDate,
   description,
   amount,
-  categooryId
+  categoryId
 }: {
   id: number
   transactionDate: string
@@ -30,6 +30,12 @@ export async function updateTransaction({
     }
   }
 
-
+  const validation = updateTransactionSchema.safeParse({
+    id,
+    transactionDate,
+    amount,
+    categoryId,
+    description
+  })
 
 }

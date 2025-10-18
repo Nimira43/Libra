@@ -8,13 +8,7 @@ const updateTransactionSchema = transactionSchema.and(z.object({
   id: z.number()
 }))
 
-export async function updateTransaction({
-  id,
-  transactionDate,
-  description,
-  amount,
-  categoryId
-}: {
+export async function updateTransaction(data: {
   id: number
   transactionDate: string
   description: string
@@ -30,12 +24,6 @@ export async function updateTransaction({
     }
   }
 
-  const validation = updateTransactionSchema.safeParse({
-    id,
-    transactionDate,
-    amount,
-    categoryId,
-    description
-  })
+  const validation = updateTransactionSchema.safeParse(data)
 
 }

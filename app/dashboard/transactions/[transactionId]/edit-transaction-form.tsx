@@ -6,6 +6,8 @@ import { z } from 'zod'
 // import { format } from 'date-fns'
 import { useToast } from '@/hooks/use-toast'
 import { useRouter } from 'next/navigation'
+import { updateTransaction } from './actions'
+import { format } from 'date-fns'
 
 export default function EditTransactionForm ({
   categories,
@@ -23,15 +25,13 @@ export default function EditTransactionForm ({
   const router = useRouter()
   const {toast} = useToast()
   const handleSubmit = async(data: z.infer<typeof transactionFormSchema>) => {
-    const result: any = {}
-    
-    
-    // await createTransaction({
-    //   amount: data.amount,
-    //   transactionDate: format(data.transactionDate, 'yyyy-MM-dd'),
-    //   categoryId: data.categoryId,
-    //   description: data.description
-
+    const result = await updateTransaction({
+      id: transaction.id,
+      amount: data.amount,
+      description: data.description,
+      categoryId: data.categoryId,
+      transactionDate: format(data.transactionDate, 'yyyy-MM-dd')
+    })
 
     if (result.error) {
       toast({

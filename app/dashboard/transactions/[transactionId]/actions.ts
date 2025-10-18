@@ -18,11 +18,12 @@ export async function updateTransaction({
   const {userId} = await auth()
 
   if (!userId) {
-    return (
+    return {
       error: true,
       message: 'Unauthorised'
-    )
+    }
   }
 
+  
 
 }

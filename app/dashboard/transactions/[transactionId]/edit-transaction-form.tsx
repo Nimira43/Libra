@@ -33,7 +33,7 @@ export default function EditTransactionForm ({
       transactionDate: format(data.transactionDate, 'yyyy-MM-dd')
     })
 
-    if (result.error) {
+    if (result?.error) {
       toast({
         title: 'Error',
         description: result.message,

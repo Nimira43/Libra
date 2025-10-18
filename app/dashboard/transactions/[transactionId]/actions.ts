@@ -4,6 +4,7 @@ import { db } from '@/db'
 import { transactionsTable } from '@/db/schema'
 import { transactionSchema } from '@/validation/transactionSchema'
 import { auth } from '@clerk/nextjs/server'
+import { and, eq } from 'drizzle-orm'
 import { z } from 'zod'
 
 const updateTransactionSchema = transactionSchema.and(z.object({
@@ -35,10 +36,17 @@ export async function updateTransaction(data: {
     }
   }
 
-  await db.update(transactionsTable).set({
-    description: data.description,
-    amount: data.amount.toString(),
-    transactionDate: data.transactionDate,
-    categoryId: data.categoryId
-  })
+  await db
+    .update(transactionsTable)
+    .set({
+      description: data.description,
+      amount: data.amount.toString(),
+      transactionDate: data.transactionDate,
+      categoryId: data.categoryId
+    }).where(
+      and(
+        eq(transactionsTable.id, data.id),
+        eq(transactionsTable.userId, userId)
+      )
+    )
 }

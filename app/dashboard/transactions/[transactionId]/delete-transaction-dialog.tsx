@@ -1,6 +1,6 @@
 'use client'
 
-import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
+import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { PiTrash } from 'react-icons/pi'
 
@@ -26,7 +26,9 @@ export default function DeleteTransactionDialog({
           <AlertDialogTitle>
             Are you sure?
           </AlertDialogTitle>
-
+          <AlertDialogDescription>
+            This transaction will be permanently deleted. This action cannot be undone. 
+          </AlertDialogDescription>
         </AlertDialogHeader>
       </AlertDialogContent>
     </AlertDialog>

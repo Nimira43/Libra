@@ -15,7 +15,7 @@ export default function DeleteTransactionDialog({
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button 
-          variant='destructive'
+          variant='outline'
           size='icon'
         >
           <PiTrash />

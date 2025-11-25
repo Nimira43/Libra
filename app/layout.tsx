@@ -48,7 +48,9 @@ export default function RootLayout({
             </SignedIn>  
           </div>
         </nav>
-        {children}
+        <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] bg-true-dark">
+          {children}
+        </main>
         <Toaster />
       </body>
     </html>

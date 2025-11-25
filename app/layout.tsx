@@ -7,7 +7,6 @@ import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton } from '
 import { Button } from '@/components/ui/button'
 import UserDropdown from './user-dropdown'
 import { Toaster } from '@/components/ui/toaster'
-import { usePathname } from 'next/navigation'
 
 const poppins = Poppins({
   variable: '--font-poppins',

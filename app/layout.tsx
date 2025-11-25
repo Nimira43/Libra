@@ -35,10 +35,10 @@ export default function RootLayout({
           <div>
             <SignedOut>
               <div className='flex items-center'>
-                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-light'>
+                <Button asChild variant='link' className='link-btn'>
                   <SignInButton />
                 </Button>
-                <Button asChild variant='link' className='uppercase text-grey-medium hover:text-light'>
+                <Button asChild variant='link' className='link-btn'>
                   <SignUpButton />
                 </Button>
               </div>

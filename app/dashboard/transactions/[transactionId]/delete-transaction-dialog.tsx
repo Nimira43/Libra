@@ -11,6 +11,10 @@ export default function DeleteTransactionDialog({
   transactionId: number
   transactionDate: string
 }) {
+  const handleDeleteConfirm = async () => {
+    
+  }
+
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

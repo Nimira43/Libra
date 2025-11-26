@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { PiTrash } from 'react-icons/pi'
 import { deleteTransaction } from './actions'
 import { useToast } from '@/hooks/use-toast'
+import { useRouter } from 'next/navigation'
 
 export default function DeleteTransactionDialog({
   transactionId,
@@ -13,6 +14,7 @@ export default function DeleteTransactionDialog({
   transactionId: number
   transactionDate: string
 }) {
+  const router = useRouter()
   const { toast } = useToast()
   const handleDeleteConfirm = async () => {
     const result = await deleteTransaction(transactionId)
@@ -31,6 +33,10 @@ export default function DeleteTransactionDialog({
       description: 'Transaction deleted',
       variant: 'success'
     })
+
+    const [year, month] = transactionDate.split('-')
+
+    router.push(`/dashboard/transactions?month=${month}&year=${year}`)
   }
 
   return (

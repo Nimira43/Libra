@@ -3,6 +3,7 @@
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { PiTrash } from 'react-icons/pi'
+import { deleteTransaction } from './actions'
 
 export default function DeleteTransactionDialog({
   transactionId,
@@ -12,7 +13,9 @@ export default function DeleteTransactionDialog({
   transactionDate: string
 }) {
   const handleDeleteConfirm = async () => {
-    
+    const result = await deleteTransaction(transactionId) {
+      
+    }
   }
 
   return (

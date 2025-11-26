@@ -55,4 +55,11 @@ export async function deleteTransaction(
   transactionId: number 
 ) {
   const { userId } = await auth()
+
+  if (!userId) {
+    return {
+      error: true,
+      message: 'Unauthorised'
+    }
+  }
 }

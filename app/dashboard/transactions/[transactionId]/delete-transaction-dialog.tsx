@@ -18,7 +18,11 @@ export default function DeleteTransactionDialog({
     const result = await deleteTransaction(transactionId)
     
     if (result?.error) {
-
+      toast({
+        title: "Error",
+        description: result.message,
+        variant: 'destructive'
+      })
       return
     }
   }

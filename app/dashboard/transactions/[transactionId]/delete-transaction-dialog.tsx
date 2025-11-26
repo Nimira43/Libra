@@ -4,6 +4,7 @@ import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescript
 import { Button } from '@/components/ui/button'
 import { PiTrash } from 'react-icons/pi'
 import { deleteTransaction } from './actions'
+import { useToast } from '@/hooks/use-toast'
 
 export default function DeleteTransactionDialog({
   transactionId,
@@ -12,10 +13,12 @@ export default function DeleteTransactionDialog({
   transactionId: number
   transactionDate: string
 }) {
+  const { toast } = useToast()
   const handleDeleteConfirm = async () => {
     const result = await deleteTransaction(transactionId)
     
     if (result?.error) {
+
       return
     }
   }

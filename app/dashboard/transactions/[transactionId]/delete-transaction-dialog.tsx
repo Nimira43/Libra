@@ -19,12 +19,18 @@ export default function DeleteTransactionDialog({
     
     if (result?.error) {
       toast({
-        title: "Error",
+        title: 'Error',
         description: result.message,
         variant: 'destructive'
       })
-      return
+      return 
     }
+
+    toast ({
+      title: 'Success',
+      description: 'Transaction deleted',
+      variant: 'success'
+    })
   }
 
   return (

@@ -7,6 +7,7 @@ import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton } from '
 import { Button } from '@/components/ui/button'
 import UserDropdown from './user-dropdown'
 import { Toaster } from '@/components/ui/toaster'
+import ThemeWrapper from '@/components/theme-wrapper'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -24,9 +25,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname()
-  const isHome = pathname === '/'
-
   return (
     <ClerkProvider>
       <html lang='en'>
@@ -51,17 +49,9 @@ export default function RootLayout({
             </SignedIn>  
           </div>
         </nav>
-        <main 
-          className={
-            `flex flex-col items-center justify-center min-h-[calc(100vh-80px)] ${
-              isHome 
-              ? 'bg-true-dark' 
-              : 'bg-light'
-            }`
-          }
-        >
+        <ThemeWrapper>
           {children}
-        </main>
+        </ThemeWrapper>
         <Toaster />
       </body>
     </html>

@@ -62,4 +62,13 @@ export async function deleteTransaction(
       message: 'Unauthorised'
     }
   }
+
+  await db
+    .delete(transactionsTable)
+    .where(
+      and(
+        eq(transactionsTable.id, transactionId),
+        eq(transactionsTable.userId, userId)
+      )  
+  )
 }

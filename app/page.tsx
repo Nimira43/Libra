@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { GiLibra } from 'react-icons/gi'
 
-function page() {
+function HomePage() {
   return (
     <div className='flex flex-col items-center '>
       <div className='w-64 h-64 relative'>
@@ -21,4 +21,4 @@ function page() {
   )
 }
 
-export default page
+export default HomePage

@@ -13,8 +13,10 @@ export default function DeleteTransactionDialog({
   transactionDate: string
 }) {
   const handleDeleteConfirm = async () => {
-    const result = await deleteTransaction(transactionId) {
-      
+    const result = await deleteTransaction(transactionId)
+    
+    if (result?.error) {
+      return
     }
   }
 

@@ -34,7 +34,9 @@ export default function DeleteTransactionDialog({
             <AlertDialogCancel>
               Cancel
             </AlertDialogCancel>
-            <Button>
+            <Button
+              onClick={handleDeleteConfirm}            
+            >
               Delete
             </Button>
           </AlertDialogFooter>

@@ -44,7 +44,7 @@ export default function EditTransactionForm ({
     toast({
       title: 'Success',
       description: 'Transaction Updated.',
-      className: 'bg-green-500 text-light'   
+      variant: 'success'   
     }) 
     router.push(`
       /dashboard/transactions?month=${

@@ -51,6 +51,8 @@ export async function updateTransaction(data: {
     )
 }
 
-export async function deleteTransaction() {
-  
+export async function deleteTransaction(
+  transactionId: number 
+) {
+  const { userId } = await auth()
 }

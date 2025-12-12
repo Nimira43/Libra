@@ -19,7 +19,7 @@ export default function Filters({
   const [selectedYear, setSelectedYear] = useState(year)
 
   return (
-    <div className='flex gap-1'>
+    <div className='flex gap-1 ml-5'>
       <Select 
         value={selectedMonth.toString()}
         onValueChange={(newValue) => setSelectedMonth(Number(newValue))}

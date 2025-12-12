@@ -66,7 +66,7 @@ export default async function TransactionsPage({
       <Card className='mt-4'>
         <CardHeader>
           <CardTitle className='flex justify-between'>
-            <span>{format(selectedDate, 'MMMM yyyy')} Transactions</span>
+            <span className='pt-1.5'>{format(selectedDate, 'MMMM yyyy')} Transactions</span>
             <div>
               <Filters 
                 year={year}

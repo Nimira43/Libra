@@ -4,7 +4,7 @@ import { GiLibra } from 'react-icons/gi'
 
 function HomePage() {
   return (
-    <div className='flex flex-col items-center '>
+    <div className='flex flex-col items-center'>
       <div className='w-64 h-64 relative'>
         <Image 
           src='/home-image.jpg'

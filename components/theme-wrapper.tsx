@@ -9,10 +9,10 @@ export default function ThemeWrapper({ children }: { children: React.ReactNode }
   return (
     <main 
       className={
-        `flex flex-col items-center justify-center min-h-[calc(100vh-80px)] ${
+        `${
           isHome 
-          ? 'bg-true-dark' 
-          : 'bg-light'
+          ? 'bg-true-dark flex flex-col items-center justify-center min-h-[calc(100vh-80px)]' 
+          : 'bg-light '
         }`
       }
     >

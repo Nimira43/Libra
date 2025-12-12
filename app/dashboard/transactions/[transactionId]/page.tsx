@@ -1,7 +1,5 @@
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
-import Link from 'next/link'
 import EditTransactionForm from './edit-transaction-form'
 import { getTransaction } from '@/data/getTransaction'
 import { notFound } from 'next/navigation'
@@ -27,24 +25,22 @@ export default async function EditTransactionPage({
   }
 
   return (
-    
-      
-      <Card className='mt-4 max-w-screen-md'>
-        <CardHeader>
-          <CardTitle className='flex justify-between'>
-            <span>Edit Transaction</span>
-            <DeleteTransactionDialog 
-              transactionId={transaction.id}
-              transactionDate={transaction.transactionDate}
-            />
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <EditTransactionForm 
-            transaction={transaction}
-            categories={categories}
+    <Card className='mt-4 max-w-screen-md'>
+      <CardHeader>
+        <CardTitle className='flex justify-between'>
+          <span>Edit Transaction</span>
+          <DeleteTransactionDialog 
+            transactionId={transaction.id}
+            transactionDate={transaction.transactionDate}
           />
-        </CardContent>
-      </Card>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <EditTransactionForm 
+          transaction={transaction}
+          categories={categories}
+        />
+      </CardContent>
+    </Card>
   )
 }

@@ -1,5 +1,7 @@
 export default function NotFound() {
   return (
-    <div>Not Found</div>
+    <div className='text-3xl mt-5'>
+      Transaction Not Found
+    </div>
   )
 }

@@ -1,5 +1,5 @@
 import { db } from '@/db'
-import { transactionsTable } from '@/db/schema'
+import { categoriesTable, transactionsTable } from '@/db/schema'
 import { auth } from '@clerk/nextjs/server'
 import { desc, eq } from 'drizzle-orm'
 import 'server-only'
@@ -26,4 +26,11 @@ export async function getRecentTransactions() {
       )
     )
     .limit(5)
+    .leftJoin(
+      categoriesTable, 
+      eq(
+        transactionsTable.categoryId,
+        categoriesTable.id
+      )
+    )
 }

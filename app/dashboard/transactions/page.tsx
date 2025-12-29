@@ -84,7 +84,7 @@ export default async function TransactionsPage({
           </Button>
           {!transactions?.length && (
             <p className='py-10 text-center text-lg text-muted-foreground'>
-              There are no transaction for this month
+              There are no transactions for this month
             </p>
           )}
           {!!transactions?.length && (

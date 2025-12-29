@@ -33,7 +33,10 @@ export async function getTransactionsByMonth({
     .from(transactionsTable)
     .where(
       and(
-        eq(transactionsTable.userId, userId),
+        eq(
+          transactionsTable.userId,
+          userId
+        ),
         gte(
           transactionsTable.transactionDate, 
           format(earliestDate, 'yyyy-MM-dd')
@@ -45,10 +48,16 @@ export async function getTransactionsByMonth({
       )
     )
     .orderBy(
-      desc(transactionsTable.transactionDate)
+      desc(
+        transactionsTable.transactionDate
+      )
     )
     .leftJoin(
       categoriesTable, 
-      eq(transactionsTable.categoryId, categoriesTable.id))
+      eq(
+        transactionsTable.categoryId,
+        categoriesTable.id
+      )
+    )
   return transactions
 }

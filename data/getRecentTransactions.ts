@@ -12,7 +12,14 @@ export async function getRecentTransactions() {
   }
 
   const transactions = await db
-    .select()
+    .select({
+      id: transactionsTable.id,
+      description: transactionsTable.description,
+      amount: transactionsTable.amount,
+      transactionDate: transactionsTable.transactionDate,
+      category: categoriesTable.name,
+      transactionType: categoriesTable.type
+    })
     .from(transactionsTable)
     .where(
       eq(
@@ -33,4 +40,5 @@ export async function getRecentTransactions() {
         categoriesTable.id
       )
     )
+  return transactions
 }

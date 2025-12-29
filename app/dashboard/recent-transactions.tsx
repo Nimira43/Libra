@@ -1,14 +1,14 @@
 import { Button } from '@/components/ui/button'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 export default function RecentTransactions() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>
+        <CardTitle className='flex justify-between items-center'>
           <span>Recent Transactions</span>
-          <div>
+          <div className='flex gap-2'>
             <Button
               asChild
               variant='outline'
@@ -21,6 +21,9 @@ export default function RecentTransactions() {
           </div>
         </CardTitle>
       </CardHeader>
+      <CardContent>
+        Recent Transactions
+      </CardContent>
     </Card>
   )
 }

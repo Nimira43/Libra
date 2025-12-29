@@ -1,4 +1,4 @@
-import RecentTransactions from "./recent-transactions";
+import RecentTransactions from './recent-transactions'
 
 export default function DashboardPage() {
   return (

@@ -206,10 +206,7 @@ export default async function TransactionsPage({
   const {month, year} = searchSchema.parse(searchParamsValues)
   const selectedDate = new Date(year, month - 1, 1)
   const transactions = await getTransactionsByMonth({month, year})
-
   const yearsRange = await getTransactionYearsRange()
-  
-  console.log({transactions})
 
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

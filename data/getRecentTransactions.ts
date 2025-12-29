@@ -1,7 +1,7 @@
 import { db } from '@/db'
 import { transactionsTable } from '@/db/schema'
 import { auth } from '@clerk/nextjs/server'
-import { eq } from 'drizzle-orm'
+import { desc, eq } from 'drizzle-orm'
 import 'server-only'
 
 export async function getRecentTransactions() {
@@ -16,6 +16,11 @@ export async function getRecentTransactions() {
       eq(
         transactionsTable.userId,
         userId
+      )
+    )
+    .orderBy(
+      desc(
+        transactionsTable.transactionDate
       )
     )
 }

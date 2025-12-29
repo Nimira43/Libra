@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
-import { Link } from 'lucide-react'
+import Link from 'next/link'
 
 export default function RecentTransactions() {
   return (

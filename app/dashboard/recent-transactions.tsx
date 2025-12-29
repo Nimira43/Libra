@@ -1,8 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { getRecentTransactions } from '@/data/getRecentTransactions'
 import Link from 'next/link'
 
-export default function RecentTransactions() {
+export default async function RecentTransactions() {
+  const recentTransactions = await getRecentTransactions()
+  console.log('RECENT TRANSACTIONS: ', recentTransactions)
+  
   return (
     <Card>
       <CardHeader>

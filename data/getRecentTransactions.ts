@@ -11,7 +11,9 @@ export async function getRecentTransactions() {
     return []
   }
 
-  const transactions = await db.select().from(transactionsTable)
+  const transactions = await db
+    .select()
+    .from(transactionsTable)
     .where(
       eq(
         transactionsTable.userId,
@@ -23,4 +25,5 @@ export async function getRecentTransactions() {
         transactionsTable.transactionDate
       )
     )
+    .limit(5)
 }

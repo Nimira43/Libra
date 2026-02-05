@@ -10,7 +10,7 @@ export default async function DashboardPage({
   const searchParamsValues = await searchParams
   let cfYear = Number(searchParamsValues.cfyear ?? today.getFullYear())
 
-  if (!isNaN(cfYear)) {
+  if (isNaN(cfYear)) {
     cfYear = today.getFullYear()
   } 
 

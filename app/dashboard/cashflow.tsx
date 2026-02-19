@@ -25,7 +25,7 @@ export default async function Cashflow({
           />
         </CardTitle>
       </CardHeader>
-      <CardContent className='grid grid-cols-[1f_250px]'>
+      <CardContent className='grid grid-cols-[1fr_250px]'>
         <CashflowContent
           annualCashflow={cashflow}
         />
